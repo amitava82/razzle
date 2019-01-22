@@ -2,7 +2,16 @@
 
 var preset = {
   presets: [
-    [require.resolve('babel-preset-env'), { modules: false }],
+    [require.resolve('babel-preset-env'), { 
+      modules: false,
+      "targets": {
+        "node": "current",
+        "browsers": [
+          "last 2 versions",
+          "ie >= 9"
+        ]
+      }
+    }],
     require.resolve('babel-preset-react'),
   ],
   plugins: [
